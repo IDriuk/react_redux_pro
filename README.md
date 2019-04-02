@@ -17,7 +17,7 @@ function max(a, b, ...numbers) {
 
 - destructuring
 ``` js
-const {role = "user", name: { first: firstName, last: lastName }}
+const {role = "user", name: { first: firstName, last: lastName }} = person
 const { permissions: {role = 'user'} = {}} = person;
 
 function connect({
