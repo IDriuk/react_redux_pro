@@ -16,18 +16,25 @@ const AppHeader = () => {
 }
 
 const SearchPanel = () => {
-  return <input placeholder="search" />
+  const searchText = 'Type here to search';
+  const searchStyle = {
+    fontSize: '20px'
+  }
+
+  return <input 
+    style={searchStyle}
+    placeholder={searchText}
+    className="foo"
+    htmlFor="" 
+    disabled
+  />
 }
 
 const App = () => {
-
-  const isLoggedIn = false
-  const loginBox = <span>Log in please</span>
-  const welcomeBox = <span>Welcome Back</span>
-
+  const value ='<script>alert("")</script>'
   return (
     <div>
-      { isLoggedIn ? welcomeBox : loginBox }
+      { value }
       <AppHeader />
       <SearchPanel />
       <TodoList />
