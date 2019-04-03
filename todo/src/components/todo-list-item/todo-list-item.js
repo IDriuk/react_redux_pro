@@ -3,14 +3,7 @@ import React, { Component } from 'react';
 import './todo-list-item.css';
 
 export default class TodoListItem extends Component {
-
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     done: false
-  //   }
-  // }
-
+  
   state = {
     done: false,
     important: false
