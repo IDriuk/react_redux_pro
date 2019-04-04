@@ -132,3 +132,6 @@ import * as calc from './mymath'
 
 import './side'
 ```
+
+- todo
+basic react (only react), state, props, function components, controlled components, form, search, filter, stage3 syntax (for state, binding this, variables from class), state function, immutable state arrays, global state and controlled components state 
