@@ -139,7 +139,7 @@ basic react (only react), state, props, function components, controlled componen
 
 - star-db
 
-children, render function, hoc, composition, context, api, async arrow, provider, consumer
+children, render function, hoc, composition, context, api, async arrow, provider, consumer, compose
 ```jsx
 import React from 'react';
 const { 
@@ -179,4 +179,16 @@ const PersonDetails = ({ itemId }) => {
     </SwapiServiceConsumer>
   );
 };
+```
+
+```js
+const compose = (...funcs) => (comp) => {
+  return funcs.reduceRight((prevResult, f) => f(prevResult), comp);  
+}
+
+compose(
+  withSwapiService(mapMethodsToProps),
+  withData,
+  withChildFunction(renderModelAndName)
+)(ItemList)
 ```
