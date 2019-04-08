@@ -136,3 +136,46 @@ import './side'
 - todo
 
 basic react (only react), state, props, function components, controlled components, form, search, filter, stage3 syntax (for state, binding this, variables from class), state function, immutable state arrays, global state and controlled components state 
+
+- star-db
+children, render function, hoc, composition, context, api, async arrow, provider, consumer
+```jsx
+import React from 'react';
+const { 
+  Provider : SwapiServiceProvider,
+  Consumer : SwapiServiceConsumer
+} =  React.createContext();
+export {
+  SwapiServiceProvider,
+  SwapiServiceConsumer
+}
+
+<SwapiServiceProvider value={this.swapiService} >
+  <div className="stardb-app">
+    <Header />
+    <PersonDetails itemId={11} />
+    <PlanetDetails itemId={5} />
+    <StarshipDetails itemId={9} />
+    <PersonList />
+    <StarshipList />
+    <PlanetList />
+  </div>
+</SwapiServiceProvider>
+
+const PersonDetails = ({ itemId }) => {
+  return (
+    <SwapiServiceConsumer>
+      { ({getPerson, getPersonImage}) => {
+        return (
+          <ItemDetails
+            itemId={itemId}
+            getData={getPerson}
+            getImageUrl={getPersonImage} >
+            <Record field="gender" label="Gender" />
+            <Record field="eyeColor" label="Eye Color" />
+          </ItemDetails>)
+      }}
+    </SwapiServiceConsumer>
+  );
+};
+```
