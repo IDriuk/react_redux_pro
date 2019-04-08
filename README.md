@@ -139,7 +139,8 @@ basic react (only react), state, props, function components, controlled componen
 
 - star-db
 
-children, render function, hoc, composition, context, api, async arrow, provider, consumer, compose
+children, render function, hoc, composition, context, api, async arrow, provider, consumer, compose,
+defaultProps, propTypes
 ```jsx
 import React from 'react';
 const { 
