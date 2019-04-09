@@ -200,4 +200,6 @@ compose(
                        const { id } = match.params;
                        return <StarshipDetails itemId={id} />
                      }}/>
+
+// withRouter - wrap component to get match, location, history
 ```
