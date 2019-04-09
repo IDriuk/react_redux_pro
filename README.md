@@ -193,3 +193,11 @@ compose(
   withChildFunction(renderModelAndName)
 )(ItemList)
 ```
+
+```js
+<Route path="/starships/:id"
+                     render={({ match, location, history }) => {
+                       const { id } = match.params;
+                       return <StarshipDetails itemId={id} />
+                     }}/>
+```
