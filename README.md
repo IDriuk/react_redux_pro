@@ -202,4 +202,18 @@ compose(
                      }}/>
 
 // withRouter - wrap component to get match, location, history
+
+<Switch>
+  <Route path="/"
+          render={() => <h2>Welcome to StarDB</h2>}
+          exact />
+  <Route path="/people/:id?" component={PeoplePage} />
+  <Route path="/starships/:id"
+          render={({ match }) => {
+            const { id } = match.params;
+            return <StarshipDetails itemId={id} />
+          }}/>
+
+  <Route render={() => <h2>Page not found</h2>} />
+</Switch>
 ```
