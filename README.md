@@ -217,3 +217,22 @@ compose(
   <Route render={() => <h2>Page not found</h2>} />
 </Switch>
 ```
+
+- re-redux
+
+```jsx
+<Provider store={store}>
+  <ErrorBoundry>
+    <BookstoreServiceProvider value={bookstoreService}>
+      <Router>
+        <App />
+      </Router>
+    </BookstoreServiceProvider>
+  </ErrorBoundry>
+</Provider>
+
+export default compose(
+  withBookstoreService(),
+  connect(mapStateToProps, mapDispatchToProps)
+)(BookList);
+```
