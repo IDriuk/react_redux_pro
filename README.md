@@ -235,4 +235,17 @@ export default compose(
   withBookstoreService(),
   connect(mapStateToProps, mapDispatchToProps)
 )(BookList);
+
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const { bookstoreService } = ownProps;
+  return {
+    fetchBooks: () => {
+      dispatch(booksRequested());
+      bookstoreService.getBooks()
+        .then((data) => dispatch(booksLoaded(data)))
+        .catch((err) => dispatch(booksError(err)))
+    }
+  }
+}
 ```
